@@ -53,9 +53,7 @@ html {
 	-ms-text-size-adjust:     100%;
 }
 
-body {
-	margin: 0;
-}
+
 
 article,
 aside,
@@ -526,6 +524,9 @@ a:active {
 	display: block;
 	float: left;
 	width: 100%;
+	  font-size: 50px;
+  margin-left: 300px;
+
 }
 
 .main-navigation ul {
@@ -889,4 +890,73 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+ .myAwesomeNav {
+ 	background-color: transparent , #FFF9F6;
+ 	display: inline-block;
+ 	width: 100%;
+ 	color: #C2BDBB;
+ 	text-decoration: none;
+ 	font-size: 25px;
+
+ }
+ul li{
+	text-decoration: none;
+	display: inline-block;
+	margin-left: 2em;
+
+}
+
+
+ body{
+ 	background-color: #2E2D2C;
+ 	color: #C2BDBB;
+ 	font-family: arial, sans-serif;
+
+ }
+#indexH1{
+	margin-left: 363px;
+
+}
+#indexH2{
+	margin-left: 363px;
+
+	margin-bottom: 100px;
+	margin-top: 100px;
+
+}
+#frontpic{
+
+	
+	width: 500px;
+	height:400px;
+}
+div#frontPic {
+  margin-left: 360px;
+}
+.Content1{
+  width: 900px;
+  margin-left: 237px;
+}
+.personTopic{
+	display: inline-block;
+	width: 45%;
+margin-left: 20px;
+	vertical-align: top;
+}
+
+.post{
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+	margin-left: 40px;
+}
+#court{
+	margin-left: 400px;
+}
+.dc-entry-content{
+	display: inline-block;
+	width: 45%;
+	vertical-align: top;
+	margin-left: 40px;
 }

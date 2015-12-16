@@ -9,48 +9,86 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package debate
+ * @package midterm
  */
-
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<h1 id="indexH1"> Welcome to the Debate Club at BMCC </h1>
+
+	<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+</script>
+
+<style> 
+#panel, #flip {
+    padding: 5px;
+    text-align: center;
+ 
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Click to slide show Todays Debate Question of the day!</div>
+<div id="panel"> Xbox ONE or PS4? AND GO! </div>
+
+</body>
+
+<div id="frontPic">
+	<img src="https://upload.wikimedia.org/wikipedia/en/5/58/Debate_Mate_Cup_2012_Final.jpg">
+</div>
+<h2 id="indexH2"> Here are some people from out Club and what they have to say !</h2>
+
+<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
+	<?php if ( have_posts() ) : ?>
 
-			if ( is_home() && ! is_front_page() ) : ?>
+			<?php if ( is_home() && ! is_front_page() ) : ?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
+			<?php endif; ?>
 
-			<?php
-			endif;
+			<?php /* Start the Loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+					 <div class="personTopic">
+						<?php the_title(); ?>
+							<?php the_content(); ?>
+					 </div>
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+		<?php endwhile; ?>
 
-			endwhile;
+	
 
-			the_posts_navigation();
+<?php the_posts_navigation(); ?>
 
-		else :
 
-			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+<?php else : ?>
+
+<?php get_template_part( 'template-parts/content', 'none' ); ?>
+<?php endif; ?>
+
+
+
+
+
+
+
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
